@@ -1,0 +1,19 @@
+.characters {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 500px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (min-width: 700px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+    }
+}
