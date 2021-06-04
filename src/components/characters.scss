@@ -1,6 +1,8 @@
 .characters {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
 
     @media (min-width: 500px) {
         grid-template-columns: 1fr 1fr;
@@ -16,4 +18,10 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 50px;
     }
+}
+
+.nothing-found {
+    margin: auto;
+    width: 90vw;
+    text-align: center;
 }

@@ -1,31 +1,21 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import Character from './character';
 import './characters.scss';
+import PropTypes from 'prop-types';
 
-const Characters = () => {
+const Characters = ( {charactersArray} ) => {
 
-    const data = useStaticQuery(graphql`
-        query characters {
-            RickAndMorty {
-            characters {
-                results {
-                name
-                image
-                id
-                }
-            }
-            }
-        }
-    `)
-
-    const charactersArray = data.RickAndMorty.characters.results;
-    console.log(charactersArray[1])
     return (
         <div className="characters">
             {charactersArray.map(characterData => <Link to={`/characters/${characterData.id}`} ><Character characterData={characterData} key={characterData.id} /></Link>)}
+            {(charactersArray.length === 0) && <h2 className="nothing-found" >Nothing Matched Your Search</h2>}
         </div>
     )
 }
+
+Characters.propTypes = {
+    charactersArray: PropTypes.array,
+} 
 
 export default Characters;

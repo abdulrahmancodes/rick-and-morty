@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import '../../scss/main.scss';
 import '../components/layout.scss';
 
+const Layout = ({ heading, children }) => {
 
-const Layout = ( { heading, children} ) => (
-    <div className="container">
-        <Header heading={heading} />
-        <div className="content">
-            {children}
+    return (
+        <div className="container">
+            <Header heading={heading} />
+            <div className="content">
+                {children}
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 Layout.propTypes = {
     heading: PropTypes.string,
