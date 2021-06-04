@@ -13,23 +13,23 @@ const Home = ({ data }) => {
   const [filteredCharacters, setFilteredCharacters] = useState(charactersArray);
   const isHome = true;
 
-  const endPoint = 'https://rickandmortyapi.com/graphql';
-    const query = gql`
-    query filteredCharacters($name: String) {
-      RickAndMorty {
-        characters(filter: {name: $name}) {
-          results {
-            name
-          }
-        }
-      }
-    }
-`
+//   const endPoint = 'https://rickandmortyapi.com/graphql';
+//     const query = gql`
+//     query filteredCharacters($name: String) {
+//       RickAndMorty {
+//         characters(filter: {name: $name}) {
+//           results {
+//             name
+//           }
+//         }
+//       }
+//     }
+// `
 
-    const variables = {
-      name: "morty"
-    }
-    request(endPoint, query, variables).then(data => console.log(data))
+//     const variables = {
+//       name: "morty"
+//     }
+//     request(endPoint, query, variables).then(data => console.log(data))
 
 
   const handleSearch = async (e) => {
