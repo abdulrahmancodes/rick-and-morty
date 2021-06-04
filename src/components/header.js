@@ -5,13 +5,13 @@ import AppContext from '../context/app-context';
 import { Link } from 'gatsby';
 
 const Header = ({ heading }) => {
-    const { handleSearch } = (heading == null) && useContext(AppContext);
+    const { handleSearch } = (heading === null) && useContext(AppContext);
 
     return (
         <header className="header" >
-            {(heading === null) ? <Link to="/" ><h3 className="heading" >Rick And Morty</h3></Link> : <h3>{heading}</h3> }
-            {/* <h3 className="heading">{(heading === null) ? 'Rick and Morty Characters' : heading}</h3> */}
-            {(heading === null) && <input type="text" placeholder="Search characters by name" className="search-box"  onChange={handleSearch} />}
+            {(heading === null) ? <Link to="/" ><h3 className="heading" >Rick And Morty</h3></Link> : <h3 className="heading" >{heading}</h3> }
+            {(heading === null) && <input type="text" placeholder="Search for any character from the page" className="search-box"  onChange={handleSearch} />}
+            { !(heading === 'Search any characters from Rick and Morty') &&  <Link to="/search" ><span className="btn">Go to the Search Page</span></Link>}
         </header>
     )
 }

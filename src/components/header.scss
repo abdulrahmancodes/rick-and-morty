@@ -7,11 +7,13 @@
 
     @media (min-width: 600px) {
         flex-direction: row;
+        // justify-content: center;
         align-items: center;
     }
 }
 
 .heading {
+    width: max-content;
     font-size: 1.5rem;
     text-align: center;
 
@@ -25,8 +27,8 @@
 }
 
 .search-box {
+    margin: 20px 0;
     width: 100%;
-    margin-top: 20px;
     height: 35px;
     padding: 10px;
     font-size: .85rem;
@@ -38,5 +40,17 @@
         width: 25%;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.16);
     }
 }

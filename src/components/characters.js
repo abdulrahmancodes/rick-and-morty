@@ -9,7 +9,7 @@ const Characters = ( {charactersArray} ) => {
     return (
         <div className="characters">
             {charactersArray.map(characterData => <Link to={`/characters/${characterData.id}`} ><Character characterData={characterData} key={characterData.id} /></Link>)}
-            {(charactersArray.length === 0) && <h2 className="nothing-found" >Nothing Matched Your Search</h2>}
+            {/* {(charactersArray.length === 0) && <h2 className="nothing-found" >Nothing Here</h2>} */}
         </div>
     )
 }
