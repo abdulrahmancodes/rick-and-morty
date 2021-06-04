@@ -53,9 +53,9 @@ const CharacterDetails = ({ data }) => {
 
 
 export const query = graphql`
-    query Characters($id: ID!) {
+    query Characters($slug: ID!) {
         RickAndMorty {
-        character(id: $id) {
+        character(id: $slug) {
             id
             name
             episode {
