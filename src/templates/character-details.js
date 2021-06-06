@@ -22,6 +22,9 @@ const CharacterDetails = ({ data }) => {
         <img src={image} alt={name} className="character-details__image" />
         <ul className="character-details__list">
           <li>
+            <strong>Name:</strong> {name}
+          </li>
+          <li>
             <strong>Species:</strong> {species}
           </li>
           <li>
@@ -54,6 +57,7 @@ export const query = graphql`
       character(id: $slug) {
         id
         name
+        status
         episode {
           name
         }
