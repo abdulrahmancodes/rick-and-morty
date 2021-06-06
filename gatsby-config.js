@@ -19,5 +19,8 @@ module.exports = {
         showSpinner: false,
       },
     },
+    // flags: {
+    //   THE_FLAG: false
+    // }
   ],
 }

@@ -3,7 +3,7 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const  allCharactersIds = [];
   const { data } = await graphql(`
-    query MyQuery {
+    query MyCharacters {
       RickAndMorty {
         characters {
           info {
@@ -15,15 +15,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }      
   `)
 
-  const {count: totalNumberOfCharacters, pages: totalNumberOfPages} = data.RickAndMorty.characters.info;
+  const {count: totalNumberOfCharacters} = data.RickAndMorty.characters.info;
 
-  for (let i = 1; i <= totalNumberOfPages; i++) {
-    actions.createPage({
-      path: '/pages/' + i,
-      component: path.resolve('./src/templates/page.js'),
-      context: { page: i }
-    })
-  }
 
   for (let i = 1; i <= totalNumberOfCharacters; i++) {
     allCharactersIds.push(i);
@@ -33,11 +26,5 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: i }
     })
   }
-
-  actions.createPage({
-    path: '/search',
-    component: path.resolve('./src/templates/search.js'),
-    context: {charactersIds: allCharactersIds},
-  })
 
 }
